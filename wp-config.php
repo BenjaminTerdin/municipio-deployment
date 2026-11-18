@@ -25,6 +25,16 @@ if( !defined('ABSPATH') ) {
     die();
 }
 
+// Load DDEV settings before Municipio configuration.
+if (getenv("IS_DDEV_PROJECT") === "true") {
+    defined("WP_HOME") || define("WP_HOME", "https://dev.local.municipio.tech");
+
+    $ddev_settings = __DIR__ . "/wp-config-ddev.php";
+    if (is_readable($ddev_settings)) {
+        require_once $ddev_settings;
+    }
+}
+
 /**
  * Config files
  *

@@ -2,5 +2,16 @@
   "name": "municipio-se/municipio-deployment-custom",
   "license": "MIT",
   "description": "Additions for you own install of municipio.",
-  "require": {}
+  "require": {
+    "wpengine/advanced-custom-fields-pro": "6.8.11"
+  },
+  "repositories": [
+    {
+      "type": "path",
+      "url": "local-packages/advanced-custom-fields-pro",
+      "options": {
+        "symlink": false
+      }
+    }
+  ]
 }
